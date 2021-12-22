@@ -1,7 +1,9 @@
 #include<iostream>
 #include<cmath>
 #define BRED "\033[1m\033[31m"
+#define BOLDBLUE    "\033[1m\033[34m"
 #define RESET   "\033[0m"
+#define BOLDMAGENTA "\033[1m\033[35m"
 using namespace std;
 class Triangles
 {
@@ -21,11 +23,23 @@ public:
 	void Data()
 	{
 		cout << "Enter coordinates for Vertice "<<BRED<<"A(X1, Y1)"<<RESET<<"\n";
-		cin >> X1 >> Y1;
+		cout << BOLDBLUE << "X1: " << RESET << "\t";
+		cin >> X1;
+		cout << BOLDBLUE << "Y1: " << RESET << "\t";
+		cin >> Y1;
+		cout << "A (" << X1 << "," << Y1 << ")" << endl;
 		cout << "Enter coordinates for Vertice " << BRED << "B(X2, Y2)" << RESET << "\n";
-		cin >> X2 >> Y2;
+		cout << BOLDBLUE << "X2: " << RESET << "\t";
+		cin >> X2;
+		cout << BOLDBLUE << "Y2: " << RESET << "\t";
+		cin >> Y2;
+		cout << "B (" << X2 << "," << Y2 << ")" << endl;
 		cout << "Enter coordinates for Vertice " << BRED << "C(X3, Y3)" << RESET << "\n";
-		cin >> X3 >> Y3;
+		cout << BOLDBLUE << "X3: " << RESET << "\t";
+		cin >> X3;
+		cout << BOLDBLUE << "Y3: " << RESET << "\t";
+		cin >> Y3;
+		cout << "C (" << X3 << "," << Y3 << ")" << endl;
 	}
 	void check()
 	{
@@ -74,10 +88,11 @@ int main()
 	Triangles T;
 	T.Data();
 	T.check();
-	cout <<"Area of the Triangle is "<< T.CalcArea() << endl;
-	cout << "Height 1 of the given triangle is " << T.CalcHeight1() << endl;
-	cout << "Height 2 of the given triangle is " << T.CalcHeight2() << endl;
-	cout << "Height 3 of the given triangle is " << T.CalcHeight3() << endl;
+	cout << endl;
+    cout <<"Area of the Triangle is "<<BOLDMAGENTA<< T.CalcArea()<<" UNITS SQUARED " << RESET << endl;
+	cout <<"Height 1 of the given triangle is " <<BOLDMAGENTA<< T.CalcHeight1()<<" UNITS" << RESET << endl;
+	cout <<"Height 2 of the given triangle is " <<BOLDMAGENTA<<T.CalcHeight2() <<" UNITS"<<RESET << endl;
+	cout <<"Height 3 of the given triangle is " <<BOLDMAGENTA<< T.CalcHeight3() <<" UNITS"<<RESET << endl;
 	system("pause");
 	return 0;
 }
